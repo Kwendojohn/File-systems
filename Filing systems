@@ -1,0 +1,40 @@
+Computer filing systems, also known as file systems, are methods and data structures that operating systems use to manage files on a disk or partition. 
+These systems define how data is stored, accessed, and managed on storage devices like hard drives, SSDs, and USB flash drives. Here are some common file systems:
+
+1) NTFS (New Technology File System):
+
+Used by Windows operating systems.
+Supports large files and volumes.
+Provides security features like file encryption and permissions.
+Includes features like file compression, shadow copies, and hard links.
+
+2) FAT32 (File Allocation Table 32):
+
+An older file system used by Windows.
+Compatible with many operating systems.
+Limited to 4GB maximum file size and 2TB maximum partition size.
+Commonly used for USB flash drives and external storage.
+
+3) exFAT (Extended File Allocation Table):
+
+Designed for flash drives.
+Overcomes the 4GB file size limit of FAT32.
+Supported by Windows, macOS, and Linux with appropriate drivers.
+
+4) ext3/ext4 (Third/Fourth Extended Filesystem):
+
+Commonly used by Linux operating systems.
+Ext4 is an improvement over ext3 with larger volume and file sizes, faster performance, and better reliability.
+Supports journaling, which helps prevent data corruption.
+
+5) Btrfs (B-tree File System):
+
+A newer file system for Linux.
+Designed for high performance and advanced features.
+Supports snapshots, pooling, and built-in RAID.
+
+6) APFS (Apple File System):
+
+The default file system for macOS High Sierra and later.
+Optimized for SSDs and flash storage.
+Provides strong encryption, space sharing, and fast directory sizing.
