@@ -1,40 +1,53 @@
 Computer filing systems, also known as file systems, are methods and data structures that operating systems use to manage files on a disk or partition. 
 These systems define how data is stored, accessed, and managed on storage devices like hard drives, SSDs, and USB flash drives. Here are some common file systems:
 
-1) NTFS (New Technology File System):
+1) exFAT (Extended File Allocation Table)
 
-Used by Windows operating systems.
-Supports large files and volumes.
-Provides security features like file encryption and permissions.
-Includes features like file compression, shadow copies, and hard links.
+Usage: Designed for flash drives and SD cards.
+Compatibility: Widely supported by Windows and macOS, and with additional drivers, it can be used on Linux.
+Maximum File Size: 16 exabytes (theoretical), 128 petabytes (practical).
+Maximum Volume Size: 128 petabytes.
 
-2) FAT32 (File Allocation Table 32):
-
-An older file system used by Windows.
-Compatible with many operating systems.
-Limited to 4GB maximum file size and 2TB maximum partition size.
-Commonly used for USB flash drives and external storage.
-
-3) exFAT (Extended File Allocation Table):
-
-Designed for flash drives.
+Features:
 Overcomes the 4GB file size limit of FAT32.
-Supported by Windows, macOS, and Linux with appropriate drivers.
+Good for flash memory due to low overhead.
+No journaling, which can reduce wear on flash memory.
 
-4) ext3/ext4 (Third/Fourth Extended Filesystem):
+2) FAT32 (File Allocation Table 32)
 
-Commonly used by Linux operating systems.
-Ext4 is an improvement over ext3 with larger volume and file sizes, faster performance, and better reliability.
-Supports journaling, which helps prevent data corruption.
+Usage: Common for USB flash drives and external hard drives.
+Compatibility: Supported by most operating systems, including Windows, macOS, and Linux.
+Maximum File Size: 4GB.
+Maximum Volume Size: 2TB.
 
-5) Btrfs (B-tree File System):
+Features:
+Improved over FAT with larger volume and file size limits.
+Still widely compatible.
+No built-in file permissions or security features.
+No journaling, which can lead to data corruption in case of power failures or crashes.
 
-A newer file system for Linux.
-Designed for high performance and advanced features.
-Supports snapshots, pooling, and built-in RAID.
+3) NTFS (New Technology File System)
 
-6) APFS (Apple File System):
+Usage: Default file system for Windows operating systems.
+Compatibility: Fully supported by Windows, read-only support on macOS, and full support with additional drivers on Linux.
+Maximum File Size: 16TB (theoretical), 256TB (practical with 64KB clusters).
+Maximum Volume Size: 16EB (exabytes) (theoretical), 256TB (practical with 64KB clusters).
 
-The default file system for macOS High Sierra and later.
-Optimized for SSDs and flash storage.
-Provides strong encryption, space sharing, and fast directory sizing.
+Features:
+Advanced security with file and folder permissions.
+Supports file compression.
+Journaling, which helps prevent data corruption.
+Supports large files and volumes.
+Includes features like shadow copies, disk quotas, and encryption.
+
+COMPARISON
+
+
+Feature,                          	exFAT,   	                              FAT,     	                             FAT32,                      	NTFS
+Usage	                    Flash drives,SD cards	              Legacy systems	                       USB drives,external storage	       Windows OS default
+Compatibility	Windows,    macOS, Linux (drivers)	         Nearly all OS	Nearly all OS	Windows,     macOS (read-only),                  Linux (drivers)
+Max File Size	            128PB (practical)	               2GB (FAT16)	                             4GB	                               256TB (practical)
+Max Volume Size	          128PB	                           2GB (FAT16)	                             2TB	                               256TB (practical)
+Security	                None	                           None	                                     None	                               Advanced (permissions, encryption)
+Journaling	              No	                             No	                                       No	                                 Yes
+Other Features	          Low overhead for flash memory	   Simple structure	                         Improved FAT	                       Compression, shadow copies, quotas, encryption
